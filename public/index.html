@@ -1,50 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mongod-Guide</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Mongodb Community edition nedlastnings Guide</h1>
+            <h1>Mongodb Community Edition Nedlastningsguide</h1>
         </header>
         
         <section class="intro-text">
-            <p>Her har du en rask guide på hvordan sette opp MongoDB Community edition på en Linux Ubuntu maskin
-                Du trenger: En Linux Ubuntu Maskin satt opp med internett tilkobling
+            <p>Her har du en rask guide på hvordan sette opp MongoDB Community edition på en Linux Ubuntu-maskin.
+                Du trenger: En Linux Ubuntu-maskin satt opp med internett-tilkobling.
             </p>
         </section>
         
         <section class="video-section">
             <h2>Tutorial Video</h2>
             <div class="video-wrapper">
-                <iframe src="./img/Mongod-Guide.mp4" frameborder="0" allowfullscreen></iframe>
+                <video controls>
+                    <source src="img/Mongod-Guide – Laget med Clipchamp.mp4" type="video/mp4">
+                    Din nettleser støtter ikke videovisning.
+                </video>
             </div>
         </section>
 
         <section class="text-bubbles">
-            <h2>Framgangs metode</h2>
+            <h2>Framgangsmåte</h2>
             <div class="bubble-container">
-
                 <div class="bubble">Importer den offentlige nøkkelen som brukes av pakkebehandlingssystemet</div>
                 <div class="bubble">sudo apt-get install gnupg curl<button class="copy-btn" onclick="copyText(2)">Kopier</button></div>
-                <div class="bubble">curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
-                    sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
-                    --dearmor<button class="copy-btn" onclick="copyText(4)">Kopier</button></div>
+                <div class="bubble">curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor<button class="copy-btn" onclick="copyText(4)">Kopier</button></div>
                 <div class="bubble">Opprett en liste-fil for MongoDB.</div>
-                <div class="bubble">echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list <button class="copy-btn" onclick="copyText(6)">Kopier</button></div>
+                <div class="bubble">echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list<button class="copy-btn" onclick="copyText(6)">Kopier</button></div>
                 <div class="bubble">Last inn den lokale pakkebasen på nytt.</div>
                 <div class="bubble">sudo apt-get update<button class="copy-btn" onclick="copyText(8)">Kopier</button></div>
                 <div class="bubble">Installer MongoDB-pakkene.</div>
                 <div class="bubble">sudo apt-get install -y mongodb-org<button class="copy-btn" onclick="copyText(10)">Kopier</button></div>
-                <div class="bubble">Start MongoDB</div>
+                <div class="bubble">Start MongoDB.</div>
                 <div class="bubble">sudo systemctl start mongod<button class="copy-btn" onclick="copyText(12)">Kopier</button></div>
-                <div class="bubble">Sjekke MonoDB statusen</div>
+                <div class="bubble">Sjekk MongoDB-statusen.</div>
                 <div class="bubble">sudo systemctl status mongod<button class="copy-btn" onclick="copyText(14)">Kopier</button></div>
-                <div class="bubble">Nå har du satt opp en Mongo database på Ubuntu maskinen din</div>
+                <div class="bubble">Nå har du satt opp en MongoDB-database på Ubuntu-maskinen din.</div>
             </div>
         </section>
 
