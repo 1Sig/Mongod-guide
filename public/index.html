@@ -52,9 +52,10 @@
 
     <script>
         function copyText(bubbleNumber) {
-            var textToCopy = document.querySelector('.bubble:nth-child(' + bubbleNumber + ')').innerText.replace('Kopier', '').trim();
+            var bubble = document.querySelector('.bubble:nth-of-type(' + bubbleNumber + ')');
+            var textToCopy = bubble.textContent.replace(bubble.querySelector('.copy-btn').textContent, '').trim();
             navigator.clipboard.writeText(textToCopy).then(function() {
-                alert('Tekst kopiert: ' + textToCopy);
+                // Ingenting trengs å gjøres her
             }, function(err) {
                 console.error('Kunne ikke kopiere tekst: ', err);
             });
